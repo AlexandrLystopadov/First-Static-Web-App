@@ -1,4 +1,4 @@
-const { incrementCount } = require('./script');
+const { incrementCount } = require('scripts');
 
 describe('incrementCount', () => {
     test('should increment count by 1', () => {

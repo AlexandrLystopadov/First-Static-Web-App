@@ -4,9 +4,5 @@
     "scripts": { 
     "start": "sirv ./src public --cors --single --no-clear --port 8000",
     "test": "jest"
-  },
-  "license": "ISC",
-  "devDependencies": {
-    "jest": "^29.7.0"
   }
 }
