@@ -1,0 +1,34 @@
+name: Run tests
+
+on:
+  push:
+    branches:
+    - 'main'
+  pull_request:
+    branches:
+    - 'main'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setpu-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      # - name: Chechout
+      #   uses: actions/checkout@v2
+      # - name: Setup Node
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: 16.18
+      - name: npm install
+        run: npm ci
+      - name: tests
+        run: npm test
