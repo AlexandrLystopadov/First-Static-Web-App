@@ -1,9 +1,13 @@
-const { incrementCount } = require('./scripts');
+// Import the function
+import {sayHi} from './scripts.js';
 
-describe('incrementCount', () => {
-    test('should increment count by 1', () => {
-        let initialCount = 0;
-        let result = incrementCount();
-        expect(result).toBe(initialCount + 1);
-    });
+// Run the test
+test('Returns a greeting as a string', function () {
+
+	// should return a string
+	expect(typeof sayHi()).toBe('string');
+
+	// should include the provided name
+	expect(sayHi('Merlin').includes('Merlin')).toBe(true);
+
 });

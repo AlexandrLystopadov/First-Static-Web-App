@@ -1,13 +1,5 @@
-let count = 0;
-
-function incrementCount() {
-    count++;
-    return count;
+function sayHi (name = 'there') {
+	return `Hi ${name}!`;
 }
 
-document.getElementById('clickButton').addEventListener('click', () => {
-    const newCount = incrementCount();
-    document.getElementById('clickCount').textContent = `Clicks: ${newCount}`;
-});
-
-module.exports = { incrementCount };
+export {sayHi};
