@@ -1,5 +1,5 @@
 // Import the function
-import {sayHi} from './scripts.js';
+const sayHi = require('./scripts')
 
 // Run the test
 test('Returns a greeting as a string', function () {
