@@ -1,5 +1,11 @@
-function sayHi (name = 'there') {
-	return `Hi ${name}!`;
+function add(a, b) {
+	return a + b;
 }
 
-module.exports = sayHi
+const result = add(2, 3);
+
+const resultDiv = document.getElementById('result');
+
+resultDiv.textContent = 'Result: ' + result;
+
+module.exports = add;

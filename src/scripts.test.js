@@ -1,13 +1,17 @@
-// Import the function
-const sayHi = require('./scripts')
+const add = require('./scripts');
 
-// Run the test
-test('Returns a greeting as a string', function () {
+test('adds 2 + 3 to equal 5', () => {
+  expect(add(2, 3)).toBe(5);
+});
 
-	// should return a string
-	expect(typeof sayHi()).toBe('string');
+test('adds 0 + 0 to equal 0', () => {
+  expect(add(0, 0)).toBe(0);
+});
 
-	// should include the provided name
-	expect(sayHi('Merlin').includes('Merlin')).toBe(true);
+test('adds -1 + 1 to equal 0', () => {
+  expect(add(-1, 1)).toBe(0);
+});
 
+test('adds 100 + 200 to equal 300', () => {
+  expect(add(100, 200)).toBe(300);
 });
