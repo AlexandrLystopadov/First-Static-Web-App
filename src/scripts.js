@@ -1,5 +1,5 @@
 function add(a, b) {
-	return a + b;
+	return a + 1;
 }
 
 // const result = add(2, 3);
