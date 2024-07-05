@@ -1,3 +1,4 @@
+/** @jest-environment jsdom */
 const add = require('./scripts');
 
 test('adds 2 + 3 to equal 5', () => {
