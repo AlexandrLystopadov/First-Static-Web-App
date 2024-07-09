@@ -23,8 +23,7 @@ jobs:
       run: npm ci
     - name: Run Tests
       run: npm run test  
-
-jobs:
+      
   build_and_deploy_job:
     if: github.event_name == 'pull_request' && github.event.action != 'closed'
     runs-on: ubuntu-latest
