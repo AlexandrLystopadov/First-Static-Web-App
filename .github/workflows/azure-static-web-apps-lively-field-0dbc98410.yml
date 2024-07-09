@@ -9,9 +9,24 @@ on:
     branches:
       - main
 
+job:
+  test_on_commit:
+  if: github.event_name == 'push'
+  runs-on: ubuntu-latest
+  name: Test on Commit
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        submodules: true
+        lfs: false
+    - name: Install packages CI
+      run: npm ci
+    - name: Run Tests
+      run: npm run test  
+
 jobs:
   build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'pull_request' && github.event.action != 'closed'
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
