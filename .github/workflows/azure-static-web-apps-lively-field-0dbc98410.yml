@@ -9,6 +9,7 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+      - new-branch
 
 jobs:
   test_on_commit:
@@ -26,7 +27,7 @@ jobs:
         run: npm run test  
 
   build_and_deploy_job:
-    if: github.event_name == 'pull_request' && github.event.action != 'closed'
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
