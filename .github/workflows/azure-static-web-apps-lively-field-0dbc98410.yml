@@ -11,7 +11,7 @@ on:
 
 jobs:
   test_on_commit:
-  if: github.event_name == 'push' && github.event.action != 'closed'
+  # if: github.event_name == 'push' && github.event.action != 'closed'
   runs-on: ubuntu-latest
   name: Test on Commit
   steps:
